@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+        }
+        .info {
+            font-style: italic;
+        }
+        .semester {
+            text-decoration: underline;
+        }
+        .left-space {
+            padding-left: 30px;
+            padding-right: 10px;
+        }
+        .score {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Scores</h2>
+<div class='content'>
+    Name: <span class='info'>John Doe</span> <br>
+    Id: <span class='info'>123-456-789</span>  <br>
+    GPA: <span class='info' id='gpa'></span>   <br>
+    Major: <span class='info'>Computer Science</span> <br>
+    <br>
+    <table class='courses'>
+        <tr>
+            <td colspan=2><span class='semester'> Winter 2013 </span> </td>
+        </tr>
+
+        <tr>
+            <td class='left-space'>Math 1C</td>
+            <td><span class='score'>B+</span></td>
+        </tr>
+        <tr>
+            <td class='left-space'>Comp Sci 111</td>
+            <td><span class='score'>A-</span></td>
+        </tr>
+        <tr>
+            <td class='left-space'>Comp Sci 100</td>
+            <td><span class='score'>A</span></td>
+        </tr>
+
+        <tr>
+            <td colspan=2><span class='semester'> Fall 2012 </span> </td>
+        </tr>
+
+        <tr>
+            <td class='left-space'>Math 1B</td>
+            <td><span class='score'>B</span></td>
+        </tr>
+        <tr>
+            <td class='left-space'>Comp Sci 2</td>
+            <td><span class='score'>A-</span></td>
+        </tr>
+        <tr>
+            <td class='left-space'>English 1</td>
+            <td><span class='score'>A</span></td>
+        </tr>
+
+        <tr>
+            <td colspan=2><span class='semester'> Spring 2012 </span> </td>
+        </tr>
+
+        <tr>
+            <td class='left-space'>Math 1A</td>
+            <td><span class='score'>A-</span></td>
+        </tr>
+        <tr>
+            <td class='left-space'>Comp Sci 1</td>
+            <td><span class='score'>A</span></td>
+        </tr>
+        <tr>
+            <td class='left-space'>History 10</td>
+            <td><span class='score'>B+</span></td>
+        </tr>
+
+    </table>
+</div>
+
+<script>
+
+
+
+function calcGPA(){
+    var rates = {'A+': 4.33, 'A': 4.0, 'A-': 3.67, 'B+': 3.33, 'B': 3.0, 'B-': 2.67, 
+                 'C+': 2.33, 'C': 2.0, 'C-': 1.67, 'D+': 1.33, 'D': 1.0, 'D-': 0.67, 'F': 0.0};
+    var n = 0;
+    var sum = 0;
+    $(".score").each(function( index ) {
+      var r = rates[$(this).text()] || 0;
+      $(this).attr('title', r);
+      sum = sum + r;
+      n++;
+    });
+    var gpa = sum/n;
+    $("#gpa").html(gpa.toFixed(2));
+}
+
+$( document ).ready(function() {
+    calcGPA();
+});
+</script>
+
+</body>
+</html>
+
+

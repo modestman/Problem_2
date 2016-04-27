@@ -1,0 +1,23 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+.info {
+    font-style: italic;
+}
+
+.semester {
+    text-decoration: underline;
+}
+
+.left-space {
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+.score {
+    color: #000;
+}
