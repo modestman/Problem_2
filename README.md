@@ -41,4 +41,4 @@ where sc.course_id = c.id and sc.student_id = '123-456-789' and sc.semester_id =
 group by c.id
 ```
 
-c) d) e) Html, css, javascript in file: `problem_2.html`
+c) d) e) Html, css, javascript in file: [problem_2.html](problem_2.html) preview: [JsFiddle](https://jsfiddle.net/z5p18L8e/)
