@@ -24,6 +24,8 @@ a) Database schema
 
 ![Database schema](images/diagram.png?raw=true "Database schema")
 
+SQL queries for create table and insert some data in file [db.py](db.py)
+
 b) SQL Query for get all semesters for student with id = 123-456-789
 ```sql
 select s.id, s.date_begin, s.date_end, s.name
